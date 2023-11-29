@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let agenda = {
+        contatti: [
+          {
+            nome: "Fabiano",
+            cognome: "Buscemi",
+            numero: 3394502129,
+          },
+          {
+            nome: "Giuseppe",
+            cognome: "Mono",
+            numero: 3394502129,
+          },
+          {
+            nome: "Marco",
+            cognome: "Polo",
+            numero: 332430599,
+          },
+          {
+            nome: "Marta",
+            cognome: "Punto",
+            numero: 343548434,
+          },
+        ],
+        mostraNomi: function () {
+          let nomi = "";
+          for (let i = 0; i < this.contatti.length; i++) {
+            nomi += [i + 1] + " " + this.contatti[i].nome + "\n";
+          }
+          return nomi;
+        },
+        mostraContatto: function (elemento) {
+          let contatto = this.contatti[elemento - 1];
+          let contattoString =
+            "Nome: " +
+            contatto.nome +
+            "\nCognome: " +
+            contatto.cognome +
+            "\nNumero: " +
+            contatto.numero;
+          let Scelta = parseInt(
+            prompt(
+              "Ecco il suo contatto:\n" +
+                contattoString +
+                "\n Inserire 1 se si vuole modificare il contatto\n Inserisca 2 se si vuole eliminare il contatto\n Inserisci 0 per tornare indietro"
+            )
+          );
+          if (Scelta == 1) {
+            this.modificaContatto(contatto);
+            chiediNome = elemento.nome;
+            chiediCognome = elemento.cognome;
+          } else if (Scelta == 2) {
+            contattoEliminato = this.eliminaContatto(contatto);
+          }
+          listaNomi = this.mostraNomi();
+        },
+        eliminaContatto: function (elemento) {
+          this.contatti.splice(elemento, 1);
+        },
+        modificaContatto: function (elemento) {
+          let Scelta2 = parseInt(
+            prompt(
+              "Inserisca 1 se vuole cambiare nome e cognome\n Inserisca 2 se cambiare numero\n Inserisca 0 se vuole tornare indietro"
+            )
+          );
+          if (Scelta2 === 1) {
+            let chiediNome = prompt("Inserisci il nuovo nome");
+            let chiediCognome = prompt("Inserisci il nuovo cognome");
+            elemento.nome = chiediNome;
+            elemento.cognome = chiediCognome;
+          } if (Scelta2 === 2) {
+            let chiediNumero = prompt("Inserisci il nuovo numero");
+            if(chiediNumero.lenght == 9 ) {
+            elemento.numero = chiediNumero;
+          }else{
+            alert("Numero non valido, inserisci un numero di 9 cifre.");
+          }
+        }else{
+           this.mostraContatto(I);
+          }
+          this.mostraContatto(I);
+        },
+      };
+      let listaNomi = agenda.mostraNomi();
+      let Chiedi;
+      let I = 0;
+      do {
+        Chiedi = parseInt(
+          prompt(
+            'Inserisca l"indice del contatto per navigare tra i contatti.\n' +
+              listaNomi +
+              "\n Inserisca 0 se vuole chiudere il menù di navigazione."
+          )
+        );
+        I = Chiedi;
+
+        if (Chiedi == 1) {
+          agenda.mostraContatto(Chiedi);
+        }
+        if (Chiedi == 2) {
+          agenda.mostraContatto(Chiedi);
+        }
+        if (Chiedi == 3) {
+          agenda.mostraContatto(Chiedi);
+        }
+        if (Chiedi == 4) {
+          agenda.mostraContatto(Chiedi);
+        }
+      } while (Chiedi != 0);
+    </script>
+  </body>
+</html>

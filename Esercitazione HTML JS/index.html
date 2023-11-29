@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,700&family=Vina+Sans&display=swap" rel="stylesheet">
+
+</head>
+<style>
+    .main-div{
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        border: 1px solid red;
+    }
+    button{
+        width: 200px;
+        height: 100px;
+    }
+    #p1{
+        font-family: 'Vina Sans', sans-serif;
+        letter-spacing: 2px;
+        font-size: 30px;
+    }
+</style>
+<body>
+    <div class="main-div">
+        <button id="1">Clicca qui!</button>
+        <button id="2">Clicca qui!</button>
+        <button id="3">Clicca qui!</button>
+    </div>
+    <div style="width: 100%; display: flex; justify-content: space-around; align-items: center; flex-wrap: wrap;">
+        <p id="p1" style="font-weight: 800;">Primo paragrafo</p>
+        <p id="p2">Secondo Paragrafo</p>
+        <p id="p3">Terzo paragrafo</p>
+        <div class="paragrafo" style=" width: 100%;text-align: center; "></div>
+    </div>
+    <div class="inputs" style="width: 100%; display: flex; justify-content: center;">
+        <div style="margin: 20px;">
+        <label for="titolo">Titolo</label>
+        <input id="inputTitolo" type="text" placeholder="Inserisci il titolo...">
+    </div>
+    <div style="margin: 20px;">
+        <label for="Paragrafo">Paragrafo</label>
+        <input id="inputParagrafo" type="text" placeholder="Inserisci il paragrafo...">
+        <button id="creaPara" style="width: 150px; height: 20px;">Crea Paragrafo</button>
+    </div>
+    </div>
+   <script src="script.js"></script>
+</body>
+</html>
